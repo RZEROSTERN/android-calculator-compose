@@ -1,6 +1,8 @@
 package mx.dev1.calc.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -31,11 +33,12 @@ fun CalcButton(button: CalculatorButton, onClick: () -> Unit) {
             .clip(RoundedCornerShape(16.dp))
             .background(MaterialTheme.colorScheme.secondary)
             .fillMaxHeight()
-            .aspectRatio(1f),
+            .aspectRatio(1f)
+            .clickable { onClick() },
         contentAlignment = Alignment.Center,
     ) {
         val contentColor = when(button.type) {
-            CalculatorButtonType.NORMAL -> Color.White
+            CalculatorButtonType.NORMAL -> { if(isSystemInDarkTheme()) Color.White else Color.Gray }
             CalculatorButtonType.ACTION -> Red
             else -> Cyan
         }
