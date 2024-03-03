@@ -60,7 +60,7 @@ class MainActivity : ComponentActivity() {
                         mutableStateListOf(
                             CalculatorButton("AC", CalculatorButtonType.RESET),
                             CalculatorButton("+/-", CalculatorButtonType.RESET),
-                            CalculatorButton("%", CalculatorButtonType.RESET),
+                            CalculatorButton("%", CalculatorButtonType.ACTION),
                             CalculatorButton("/", CalculatorButtonType.ACTION),
 
                             CalculatorButton("7", CalculatorButtonType.NORMAL),
