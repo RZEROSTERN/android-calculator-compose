@@ -28,6 +28,10 @@ class AppViewModel : ViewModel() {
     }
 
     fun getResult(): Double {
+        if(firstNumberMutable.value == null || secondNumberMutable.value == null) {
+            return 0.0
+        }
+
         return when(actionMutable.value) {
             "+" -> { firstNumberMutable.value!! + secondNumberMutable.value!! }
             "-" -> { firstNumberMutable.value!! - secondNumberMutable.value!! }
